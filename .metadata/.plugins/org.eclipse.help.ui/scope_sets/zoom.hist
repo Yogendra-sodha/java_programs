@@ -1,0 +1,6 @@
+#Sun Jan 21 01:34:17 EST 2024
+__DEFAULT__=false
+expression=zoom
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true

@@ -1,0 +1,22 @@
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+
+public class LoginServlet extends HttpServlet {
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String userName = request.getParameter("userName");
+		String password = request.getParameter("password");
+		
+//		verify name and, username, password from db
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

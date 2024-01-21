@@ -1,0 +1,55 @@
+import java.io.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+
+public class LoginServlet extends HttpServlet {
+	Connection conn;
+	
+    public void init(ServletConfig config) throws ServletException {
+        try {
+            super.init(config); // Call the superclass init() method first
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/java_login");
+            System.out.println("connected");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String u_name = request.getParameter("userName");
+		String password = request.getParameter("password");
+		try {
+		PreparedStatement st = conn.prepareStatement("Select * from users where u_name='"+u_name+"' and password='"+password+"' ");
+		ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				out.println("Welcome to login");
+			}
+			else {
+				out.println("Not correct login");
+				out.println("click <a href=\"/LoginApp/login.jsp\">here </a> to login again");
+			}
+		}
+		catch (Exception e) {
+			out.println(e);
+		}
+	}
+	
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+	
+	public void destroy(ServletConfig config) {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

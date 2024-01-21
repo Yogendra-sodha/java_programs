@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = "/LoginApp/RegisterServlet" method="post">
+		Name <input name = "name"/><br>
+		User Name <input name = "userName"/><br>
+		Password <input type="password" name = "password"/><br>
+		Confirm Password <input type="password" name = "rePassword"/><br>
+		<input type ="submit" value = "Sign-in">
+	</form>
+	<p1>User<a href="login.jsp">Already User?</a></p1>
+</body>
+</html>

@@ -1,0 +1,43 @@
+import java.io.*;
+import java.sql.*;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+
+public class RegisterServlet extends HttpServlet {
+	Connection conn;
+	
+	public void init(ServletConfig config) {
+//		establish connection in init method
+		try {
+			Class.forName("org.postgresql.Driver");
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/java_login","postgres","1234");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("name");
+		String userName = request.getParameter("userName");
+		String password = request.getParameter("password");
+		String rePassword = request.getParameter("parameter");
+		
+		try {
+			PreparedStatement p1 = conn.prepareStatement("insert into users values ('"+name+"','"+userName+"','"+password+"')");
+			p1.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

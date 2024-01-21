@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = "/LoginApp/LoginServlet" method="post">
+		Name <input name = "name"/><br>
+		User Name <input name = "userName"/><br>
+		Password <input type="password" name = "password"/><br>
+		Confirm Password <input type="password" name = "rePassword"/><br>
+		<input type ="submit" value = "Register">
+	</form>
+	<p1>New user <a href="">Register</a>></p1>
+</body>
+</html>

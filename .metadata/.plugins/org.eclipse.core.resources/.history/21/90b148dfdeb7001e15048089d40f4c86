@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Emp Details</title>
+</head>
+<body>
+	<form action = "/WebProj/EmpServlet">
+		Name<input value = "eName"/><br>
+		Dept<input value = "dept"/><br>
+		Salary<input value = "salary"/><br>
+		<input type ="submit" value = "sub">
+	</form>
+</body>
+</html>

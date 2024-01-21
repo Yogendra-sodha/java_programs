@@ -1,0 +1,16 @@
+package lambda_stream;
+import java.util.*;
+
+@FunctionalInterface
+interface Product{
+	void productDemo();
+}
+
+
+public class LambdaStreamDemo {
+
+	public static void main(String[] args) {
+		Product p = () -> {System.out.println("Calling");};
+		p.productDemo();
+	}
+}

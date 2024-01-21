@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Emp Details</title>
+</head>
+<body>
+	<form action = "post">
+		Name<input value = "eName">
+		Dept<input value = "dept">
+		Salary<input value = "salary">
+		<input type ="submit" value = "sub">
+	</form>
+</body>
+</html>
